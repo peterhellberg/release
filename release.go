@@ -1,3 +1,4 @@
+// Package release is used to parse scene release names
 package release
 
 import (
