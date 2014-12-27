@@ -15,6 +15,7 @@ type Release struct {
 	Category   string
 	Resolution string
 	Format     string
+	Audio      string
 	Group      string
 }
 
@@ -27,7 +28,7 @@ var (
 	bluRayPattern     = regexp.MustCompile(`(BluRay|Bluray|Blu\.Ray|BRRip|BDRIP)`)
 	categoryPattern   = regexp.MustCompile(`(BluRay|Bluray|Blu\.Ray|BRRip|BDRIP|HDRip|WEB-DL|Webrip)`)
 	formatPattern     = regexp.MustCompile(`[\.\s]([xXhH]264|XviD)[\-\.\s]`)
-	audioPattern      = regexp.MustCompile(`(AAC|DTS|DD5\.1)`)
+	audioPattern      = regexp.MustCompile(`(AAC|AC3|DTS|DD5\.1)`)
 )
 
 // Parse parses a release name
@@ -63,6 +64,11 @@ func Parse(s string) (*Release, error) {
 			r.Year = year
 			r.Title = cleanString(s[:loc[0]])
 		}
+	}
+
+	// Find the audio
+	if loc := audioPattern.FindStringIndex(s); loc != nil {
+		r.Audio = s[loc[0]:loc[1]]
 	}
 
 	// Try to find the group again
