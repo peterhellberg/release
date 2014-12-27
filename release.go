@@ -12,6 +12,7 @@ type Release struct {
 	Title      string
 	Year       int
 	Type       string
+	Category   string
 	Resolution string
 	Format     string
 	Group      string
