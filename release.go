@@ -24,7 +24,10 @@ var (
 	groupNamePattern  = regexp.MustCompile(`[[:alnum:]]+`)
 	resolutionPattern = regexp.MustCompile(`(720|1080)p`)
 	typePattern       = regexp.MustCompile(`\.(Unrated|UNRATED|INTERNAL|LiMiTED|LIMITED|Remastered\.DC|DC|MULTiSubs|PROPER|EXTENDED|Extended|IMAX\.EDITION)\.`)
-	formatPattern     = regexp.MustCompile(`[\.\s][xXh]264[\-\.\s]`)
+	bluRayPattern     = regexp.MustCompile(`(BluRay|Bluray|Blu\.Ray|BRRip|BDRIP)`)
+	categoryPattern   = regexp.MustCompile(`(BluRay|Bluray|Blu\.Ray|BRRip|BDRIP|HDRip|WEB-DL|Webrip)`)
+	formatPattern     = regexp.MustCompile(`[\.\s]([xXhH]264|XviD)[\-\.\s]`)
+	audioPattern      = regexp.MustCompile(`(AAC|DTS|DD5\.1)`)
 )
 
 // Parse parses a release name
@@ -38,7 +41,7 @@ func Parse(s string) (*Release, error) {
 
 	// Find the format
 	if loc := formatPattern.FindStringIndex(s); loc != nil {
-		r.Format = strings.ToLower(s[loc[0]+1:])
+		r.Format = strings.ToLower(s[loc[0]+1 : loc[1]-1])
 	}
 
 	// Find the resolution

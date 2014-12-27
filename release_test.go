@@ -24,20 +24,20 @@ var releaseTests = []struct {
 	{"Dead.Man.Down.2013.720p.BluRay.x264-SPARKS", "Dead Man Down", 2013, "", "", "720p", "x264", "SPARKS"},
 	{"Detachment.2011.LIMITED.720p.BluRay.x264-TRiPS", "Detachment", 2011, "LIMITED", "", "720p", "x264", "TRiPS"},
 	{"Django.Unchained.2012.720p.BluRay.x264-SPARKS", "Django Unchained", 2012, "", "", "720p", "x264", "SPARKS"},
-	{"Elysium.2013.720p.WEB-DL.H264-WEBiOS", "Elysium", 2013, "", "", "720p", "x264", "WEBiOS"},
+	{"Elysium.2013.720p.WEB-DL.H264-WEBiOS", "Elysium", 2013, "", "", "720p", "h264", "WEBiOS"},
 	{"Enders.Game.2014.720p.HDRip.x264-BRENYS", "Enders Game", 2014, "", "", "720p", "x264", "BRENYS"},
 	{"Equilibrium.2002.720p.BluRay.DTS.x264-HiDt", "Equilibrium", 2002, "", "", "720p", "x264", "HiDt"},
-	{"Fast.and.Furious.6.2013.720p.WEB-DL.H264-HDCLUB", "Fast and Furious 6", 2013, "", "", "720p", "x264", "HDCLUB"},
-	{"Flu.2013.720p.BRRip.XviD-TeRRa", "Flu", 2013, "", "", "720p", "x264", "TeRRa"},
+	{"Fast.and.Furious.6.2013.720p.WEB-DL.H264-HDCLUB", "Fast and Furious 6", 2013, "", "", "720p", "h264", "HDCLUB"},
+	{"Flu.2013.720p.BRRip.XviD-TeRRa", "Flu", 2013, "", "", "720p", "xvid", "TeRRa"},
 	{"Friends.with.Kids.2011.720p.BluRay.DD5.1.x264-HiDt", "Friends with Kids", 2011, "", "", "720p", "x264", "HiDt"},
 	{"Get.the.Gringo.2012.BluRay.720p.DTS.x264-CHD", "Get the Gringo", 2012, "", "", "720p", "x264", "CHD"},
-	{"Gravity.2013.720p.WEB-DL.H264-PublicHD", "Gravity", 2013, "", "", "720p", "x264", "PublicHD"},
+	{"Gravity.2013.720p.WEB-DL.H264-PublicHD", "Gravity", 2013, "", "", "720p", "h264", "PublicHD"},
 	{"Her.2013.720p.BluRay.x264-WiNNy", "Her", 2013, "", "", "720p", "x264", "WiNNy"},
 	{"Inception.720p.BluRay.x264-CROSSBOW", "Inception", 0, "", "", "720p", "x264", "CROSSBOW"},
 	{"Intolerable.Cruelty.2003.720p.Bluray.X264-DIMENSION", "Intolerable Cruelty", 2003, "", "", "720p", "x264", "DIMENSION"},
 	{"Intouchables.2011.720p.BluRay.x264.DTS-HDChina", "Intouchables", 2011, "", "", "720p", "x264", "HDChina"},
 	{"Iron.Man.2.720p.BluRay.x264-EXQUiSiTE", "Iron Man 2", 0, "", "", "720p", "x264", "EXQUiSiTE"},
-	{"Iron.Man.3.2013.720p.WEB-DL.H264-WEBiOS [PublicHD]", "Iron Man 3", 2013, "", "", "720p", "x264", "WEBiOS"},
+	{"Iron.Man.3.2013.720p.WEB-DL.H264-WEBiOS [PublicHD]", "Iron Man 3", 2013, "", "", "720p", "h264", "WEBiOS"},
 	{"Its.All.Gone.Pete.Tong.2004.720p.BluRay.x264-CiNEFiLE", "Its All Gone Pete Tong", 2004, "", "", "720p", "x264", "CiNEFiLE"},
 	{"Jack Reacher.2012 BDRip 720p DTS x264-MarGe", "Jack Reacher", 2012, "", "", "720p", "x264", "MarGe"},
 	{"Jobs.2013.720p.BluRay.x264-BLOW", "Jobs", 2013, "", "", "720p", "x264", "BLOW"},
@@ -48,7 +48,7 @@ var releaseTests = []struct {
 	{"Need.For.Speed.2014.720p.BluRay.x264-SPARKS", "Need For Speed", 2014, "", "", "720p", "x264", "SPARKS"},
 	{"Nymphomaniac.Vol.II.2013.720p.BluRay.X264-AMIABLE", "Nymphomaniac Vol II", 2013, "", "", "720p", "x264", "AMIABLE"},
 	{"Oblivion.2013.720p.BluRay.x264-SPARKS", "Oblivion", 2013, "", "", "720p", "x264", "SPARKS"},
-	{"Pacific.Rim.2013.720p.WEB-DL.H264-PublicHD", "Pacific Rim", 2013, "", "", "720p", "x264", "PublicHD"},
+	{"Pacific.Rim.2013.720p.WEB-DL.H264-PublicHD", "Pacific Rim", 2013, "", "", "720p", "h264", "PublicHD"},
 	{"Pain.and.Gain.2013.720p.BluRay.X264-AMIABLE", "Pain and Gain", 2013, "", "", "720p", "x264", "AMIABLE"},
 	{"Pi.1998.LiMiTED.720p.BluRay.x264-SiNNERS", "Pi", 1998, "LIMITED", "", "720p", "x264", "SiNNERS"},
 	{"Pornopung.2013.720p.BluRay.x264-SUG", "Pornopung", 2013, "", "", "720p", "x264", "SUG"},
@@ -61,7 +61,7 @@ var releaseTests = []struct {
 	{"Sliding.Doors.1998.720p.BluRay.X264-AMIABLE", "Sliding Doors", 1998, "", "", "720p", "x264", "AMIABLE"},
 	{"Snitch.2013.720p.BluRay.DTS.x264-HDWinG", "Snitch", 2013, "", "", "720p", "x264", "HDWinG"},
 	{"Snowpiercer.2013.720p.BluRay.x264-WiNNy", "Snowpiercer", 2013, "", "", "720p", "x264", "WiNNy"},
-	{"Star.Trek.Into.Darkness.2013.720p.WEB-DL.h264-PublicHD", "Star Trek Into Darkness", 2013, "", "", "720p", "x264", "PublicHD"},
+	{"Star.Trek.Into.Darkness.2013.720p.WEB-DL.h264-PublicHD", "Star Trek Into Darkness", 2013, "", "", "720p", "h264", "PublicHD"},
 	{"Ted.2012.720p.BluRay.x264-DAA", "Ted", 2012, "", "", "720p", "x264", "DAA"},
 	{"The Bourne Legacy 2012 BRRip 720p DTS x264 MarGe", "The Bourne Legacy", 2012, "", "", "720p", "x264", "MarGe"},
 	{"The Lone Ranger (2013)", "The Lone Ranger", 2013, "", "", "", "", ""},
@@ -69,8 +69,8 @@ var releaseTests = []struct {
 	{"The.Amazing.Spider-Man.2012.720p.BluRay.X264-AMIABLE", "The Amazing Spider-Man", 2012, "", "", "720p", "x264", "AMIABLE"},
 	{"The.Best.Exotic.Marigold.Hotel.2011.720p.BluRay.X264-AMIABLE [PublicHD]", "The Best Exotic Marigold Hotel", 2011, "", "", "720p", "x264", "AMIABLE"},
 	{"The.Bucket.List.2007.MULTiSubs.720p.BluRay.DTS.x264-BLiNK", "The Bucket List", 2007, "MULTISUBS", "", "720p", "x264", "BLiNK"},
-	{"The.Fault.in.Our.Stars.2014.EXTENDED.720p.WEB-DL.H264.AC3-FAS", "The Fault in Our Stars", 2014, "EXTENDED", "", "720p", "x264", "FAS"},
-	{"The.Five-Year.Engagement.2012.UNRATED.720p.BRRip.XviD.AC3-LEGi0N", "The Five-Year Engagement", 2012, "UNRATED", "", "720p", "x264", "LEGi0N"},
+	{"The.Fault.in.Our.Stars.2014.EXTENDED.720p.WEB-DL.H264.AC3-FAS", "The Fault in Our Stars", 2014, "EXTENDED", "", "720p", "h264", "FAS"},
+	{"The.Five-Year.Engagement.2012.UNRATED.720p.BRRip.XviD.AC3-LEGi0N", "The Five-Year Engagement", 2012, "UNRATED", "", "720p", "xvid", "LEGi0N"},
 	{"The.Hand.That.Rocks.The.Cradle.1992.720p.BluRay.x264-HD4U", "The Hand That Rocks The Cradle", 1992, "", "", "720p", "x264", "HD4U"},
 	{"The.Hobbit.An.Unexpected.Journey.2012.720p.BluRay.x264-SPARKS", "The Hobbit An Unexpected Journey", 2012, "", "", "720p", "x264", "SPARKS"},
 	{"The.Hunger.Games.2012.720p.BluRay.x264.DTS-HDChina", "The Hunger Games", 2012, "", "", "720p", "x264", "HDChina"},
@@ -78,7 +78,7 @@ var releaseTests = []struct {
 	{"The.Lucky.One.2012.720p.Bluray.DTS.x264-HDxT", "The Lucky One", 2012, "", "", "720p", "x264", "HDxT"},
 	{"The.Machine.2013.720p.BluRay.x264-WiNNy", "The Machine", 2013, "", "", "720p", "x264", "WiNNy"},
 	{"The.Magic.Of.Belle.Isle.2012.LiMiTED.720p.BluRay.x264-SPARKS", "The Magic Of Belle Isle", 2012, "LIMITED", "", "720p", "x264", "SPARKS"},
-	{"The.Secret.Life.Of.Walter.Mitty.2013.720p.WEB-DL.H264-PublicHD", "The Secret Life Of Walter Mitty", 2013, "", "", "720p", "x264", "PublicHD"},
+	{"The.Secret.Life.Of.Walter.Mitty.2013.720p.WEB-DL.H264-PublicHD", "The Secret Life Of Walter Mitty", 2013, "", "", "720p", "h264", "PublicHD"},
 	{"The.Wolf.of.Wall.Street.2013.720p.BluRay.x264-WiNNy", "The Wolf of Wall Street", 2013, "", "", "720p", "x264", "WiNNy"},
 	{"The.Wolverine.2013.EXTENDED.720p.BluRay.x264-SPARKS[rarbg]", "The Wolverine", 2013, "EXTENDED", "", "720p", "x264", "SPARKS"},
 	{"The.Zero.Theorem.2013.LIMITED.READ.NFO.720p.BluRay.X264-AMIABLE", "The Zero Theorem", 2013, "LIMITED", "", "720p", "x264", "AMIABLE"},
@@ -87,7 +87,7 @@ var releaseTests = []struct {
 	{"Trolljegeren.2010.NORWEGIAN.PROPER.720p.BluRay.x264-NOHD", "Trolljegeren", 2010, "PROPER", "", "720p", "x264", "NOHD"},
 	{"Tron.Legacy.2010.BluRay.720p.DTS.x264-CHD", "Tron Legacy", 2010, "", "", "720p", "x264", "CHD"},
 	{"Wanderlust.720p.BluRay.X264-BLOW", "Wanderlust", 0, "", "", "720p", "x264", "BLOW"},
-	{"We're the Millers (2013)", "We're the Millers", 2013, "", "", "", "x264", ""},
+	{"We're the Millers (2013)", "We're the Millers", 2013, "", "", "", "", ""},
 	{"Weekender.2011.720p.BluRay.X264-7SinS", "Weekender", 2011, "", "", "720p", "x264", "7SinS"},
 	{"Welcome to the Punch 2013 720p BluRay DTS x264-TayTO", "Welcome to the Punch", 2013, "", "", "720p", "x264", "TayTO"},
 	{"While.You.Were.Sleeping.1995.720p.BluRay.2Audio.DTS.AC3.x264-HDWinG", "While You Were Sleeping", 1995, "", "", "720p", "x264", "HDWinG"},
@@ -117,6 +117,11 @@ func TestParse(t *testing.T) {
 
 		if r.Resolution != tt.Resolution {
 			t.Errorf("r.Resolution = %v, want %v", r.Resolution, tt.Resolution)
+		}
+
+		if r.Format != tt.Format {
+			t.Log(tt)
+			t.Errorf("r.Format = %v, want %v", r.Format, tt.Format)
 		}
 
 		if r.Group != tt.Group {
