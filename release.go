@@ -25,8 +25,8 @@ var (
 	groupNamePattern  = regexp.MustCompile(`[[:alnum:]]+`)
 	resolutionPattern = regexp.MustCompile(`(720|1080)p`)
 	typePattern       = regexp.MustCompile(`\.(Unrated|UNRATED|INTERNAL|LiMiTED|LIMITED|Remastered\.DC|DC|MULTiSubs|PROPER|EXTENDED|Extended|IMAX\.EDITION)\.`)
-	bluRayPattern     = regexp.MustCompile(`(BluRay|Bluray|Blu\.Ray|BRRip|BDRIP)`)
-	categoryPattern   = regexp.MustCompile(`(BluRay|Bluray|Blu\.Ray|BRRip|BDRIP|HDRip|WEB-DL|Webrip)`)
+	bluRayPattern     = regexp.MustCompile(`[\.\s](BluRay|Bluray|Blu\.Ray|BRRip|BDRIP|BDRip)[\.\s]`)
+	categoryPattern   = regexp.MustCompile(`[\.\s](HDRip|WEB-DL|Webrip)[\.\s]`)
 	formatPattern     = regexp.MustCompile(`[\.\s]([xXhH]264|XviD)[\-\.\s]`)
 	audioPattern      = regexp.MustCompile(`(AAC|AC3|DTS|DD5\.1)`)
 )
@@ -55,6 +55,13 @@ func Parse(s string) (*Release, error) {
 	if loc := typePattern.FindStringIndex(s); loc != nil {
 		r.Type = strings.Replace(strings.ToUpper(s[loc[0]+1:loc[1]-1]), ".", " ", -1)
 		r.Title = cleanString(s[:loc[0]])
+	}
+
+	// Find the category, try different versions of BluRay first
+	if loc := bluRayPattern.FindStringIndex(s); loc != nil {
+		r.Category = "BluRay"
+	} else if loc := categoryPattern.FindStringIndex(s); loc != nil {
+		r.Category = s[loc[0]+1 : loc[1]-1]
 	}
 
 	// Try to find the year
