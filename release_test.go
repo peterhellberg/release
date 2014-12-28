@@ -135,5 +135,9 @@ func TestParse(t *testing.T) {
 		if r.Group != tt.Group {
 			t.Errorf("r.Group = %v, want %v", r.Group, tt.Group)
 		}
+
+		if r.Input != tt.Input {
+			t.Errorf("r.Input = %v, want %v", r.Input, tt.Input)
+		}
 	}
 }

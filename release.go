@@ -9,6 +9,7 @@ import (
 
 // Release represents a scene release
 type Release struct {
+	Input      string
 	Title      string
 	Year       int
 	Type       string
@@ -33,7 +34,7 @@ var (
 
 // Parse parses a release name
 func Parse(s string) (*Release, error) {
-	r := Release{}
+	r := Release{Input: s}
 
 	// Find the group
 	if loc := groupPattern.FindStringIndex(s); loc != nil {
