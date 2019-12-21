@@ -12,6 +12,8 @@ type Release struct {
 	Input      string
 	Title      string
 	Year       int
+	Season     int
+	Episode    int
 	Type       string
 	Category   string
 	Resolution string
@@ -24,12 +26,13 @@ var (
 	yearPattern       = regexp.MustCompile(`[1,2]\d{3}`)
 	groupPattern      = regexp.MustCompile(`-[[:alnum:]]+(\z|\s|\[)`)
 	groupNamePattern  = regexp.MustCompile(`[[:alnum:]]+`)
-	resolutionPattern = regexp.MustCompile(`(720|1080)p`)
-	typePattern       = regexp.MustCompile(`\.(Unrated|UNRATED|INTERNAL|LiMiTED|LIMITED|Remastered\.DC|DC|MULTiSubs|PROPER|EXTENDED|Extended|IMAX\.EDITION)\.`)
+	resolutionPattern = regexp.MustCompile(`(720|1080|1440|2160)p`)
+	typePattern       = regexp.MustCompile(`\.(Unrated|UNRATED|INTERNAL|iNTERNAL|LiMiTED|LIMITED|Remastered\.DC|DC|MULTiSubs|PROPER|EXTENDED|Extended|IMAX\.EDITION)\.`)
 	bluRayPattern     = regexp.MustCompile(`[\.\s](BluRay|Bluray|Blu\.Ray|BRRip|BDRIP|BDRip)[\.\s]`)
-	categoryPattern   = regexp.MustCompile(`[\.\s](HDRip|WEB-DL|Webrip)[\.\s]`)
-	formatPattern     = regexp.MustCompile(`[\.\s]([xXhH]264|XviD)[\-\.\s]`)
-	audioPattern      = regexp.MustCompile(`(AAC|AC3|DTS|DD5\.1)`)
+	categoryPattern   = regexp.MustCompile(`[\.\s](HDRip|WEB-DL|WEBRip|Webrip|HDTV)[\.\s]`)
+	formatPattern     = regexp.MustCompile(`[\.\s]([xXhH]264|265|XviD)[\-\.\s]`)
+	audioPattern      = regexp.MustCompile(`(AAC2\.0|AAC|AC3|DTS|DD5\.1|DDP5\.1)`)
+	episodePattern    = regexp.MustCompile(`S(\d{1,3})E(\d{1,3})`)
 )
 
 // Parse parses a release name
@@ -69,7 +72,9 @@ func Parse(s string) (*Release, error) {
 	if loc := yearPattern.FindStringIndex(s); loc != nil {
 		year, err := strconv.Atoi(s[loc[0]:loc[1]])
 		if err == nil {
-			r.Year = year
+			if year > 1900 {
+				r.Year = year
+			}
 			r.Title = cleanString(s[:loc[0]])
 		}
 	}
@@ -83,6 +88,17 @@ func Parse(s string) (*Release, error) {
 	if r.Group == "" {
 		if loc := formatPattern.FindStringIndex(s); loc != nil {
 			r.Group = s[loc[1]:]
+		}
+	}
+
+	// Find the season and episode
+	if sm := episodePattern.FindAllStringSubmatch(s, -1); len(sm) == 1 {
+		if season, err := strconv.Atoi(sm[0][1]); err == nil {
+			r.Season = season
+		}
+
+		if episode, err := strconv.Atoi(sm[0][2]); err == nil {
+			r.Episode = episode
 		}
 	}
 
