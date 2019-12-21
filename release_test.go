@@ -104,57 +104,53 @@ var releaseTests = []struct {
 
 func TestParse(t *testing.T) {
 	for _, tt := range releaseTests {
-		tt := tt
+		r, err := Parse(tt.Input)
+		if err != nil {
+			t.Errorf("unexpected error %v", err)
+		}
 
-		t.Run(tt.Input, func(t *testing.T) {
-			r, err := Parse(tt.Input)
-			if err != nil {
-				t.Errorf("unexpected error %v", err)
-			}
+		if r.Title != tt.Title {
+			t.Errorf("r.Title = %v, want %v", r.Title, tt.Title)
+		}
 
-			if r.Title != tt.Title {
-				t.Errorf("r.Title = %v, want %v", r.Title, tt.Title)
-			}
+		if r.Year != tt.Year {
+			t.Errorf("r.Year = %d, want %d", r.Year, tt.Year)
+		}
 
-			if r.Year != tt.Year {
-				t.Errorf("r.Year = %d, want %d", r.Year, tt.Year)
-			}
+		if r.Season != tt.Season {
+			t.Errorf("r.Season = %d, want %d", r.Season, tt.Season)
+		}
 
-			if r.Season != tt.Season {
-				t.Errorf("r.Season = %d, want %d", r.Season, tt.Season)
-			}
+		if r.Episode != tt.Episode {
+			t.Errorf("r.Episode = %d, want %d", r.Episode, tt.Episode)
+		}
 
-			if r.Episode != tt.Episode {
-				t.Errorf("r.Episode = %d, want %d", r.Episode, tt.Episode)
-			}
+		if r.Type != tt.Type {
+			t.Errorf("r.Type = %v, want %v", r.Type, tt.Type)
+		}
 
-			if r.Type != tt.Type {
-				t.Errorf("r.Type = %v, want %v", r.Type, tt.Type)
-			}
+		if r.Category != tt.Category {
+			t.Errorf("r.Category = %v, want %v", r.Category, tt.Category)
+		}
 
-			if r.Category != tt.Category {
-				t.Errorf("r.Category = %v, want %v", r.Category, tt.Category)
-			}
+		if r.Resolution != tt.Resolution {
+			t.Errorf("r.Resolution = %v, want %v", r.Resolution, tt.Resolution)
+		}
 
-			if r.Resolution != tt.Resolution {
-				t.Errorf("r.Resolution = %v, want %v", r.Resolution, tt.Resolution)
-			}
+		if r.Format != tt.Format {
+			t.Errorf("r.Format = %v, want %v", r.Format, tt.Format)
+		}
 
-			if r.Format != tt.Format {
-				t.Errorf("r.Format = %v, want %v", r.Format, tt.Format)
-			}
+		if r.Audio != tt.Audio {
+			t.Errorf("r.Audio = %v, want %v", r.Audio, tt.Audio)
+		}
 
-			if r.Audio != tt.Audio {
-				t.Errorf("r.Audio = %v, want %v", r.Audio, tt.Audio)
-			}
+		if r.Group != tt.Group {
+			t.Errorf("r.Group = %v, want %v", r.Group, tt.Group)
+		}
 
-			if r.Group != tt.Group {
-				t.Errorf("r.Group = %v, want %v", r.Group, tt.Group)
-			}
-
-			if r.Input != tt.Input {
-				t.Errorf("r.Input = %v, want %v", r.Input, tt.Input)
-			}
-		})
+		if r.Input != tt.Input {
+			t.Errorf("r.Input = %v, want %v", r.Input, tt.Input)
+		}
 	}
 }
