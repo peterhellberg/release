@@ -3,14 +3,13 @@ release (ALPHA)
 
 A small package used to parse scene release names
 
-[![Build Status](https://travis-ci.org/peterhellberg/release.svg?branch=master)](https://travis-ci.org/peterhellberg/release)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/github.com/peterhellberg/release)
 [![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/peterhellberg/release#license-mit)
 
 ## Installation
 
 ```bash
-go get -u github.com/peterhellberg/release
+go get github.com/peterhellberg/release@latest
 ```
 
 ## Examples
@@ -55,7 +54,7 @@ func main() {
 
 ## License (MIT)
 
-*Copyright (C) 2014-2019 [Peter Hellberg](https://c7.se)*
+*Copyright (C) 2014-2022 [Peter Hellberg](https://c7.se)*
 
 > Permission is hereby granted, free of charge, to any person obtaining
 > a copy of this software and associated documentation files (the "Software"),
